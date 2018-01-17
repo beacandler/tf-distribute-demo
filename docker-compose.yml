@@ -1,0 +1,13 @@
+version: '2'
+services:
+  mnist:
+    build: .
+    image: tensorflow/tensorflow:latest-gpu
+    ports:
+    - 8888:8888
+    - 9999:9999
+    volumes:
+    - .:/mnist
+    - /mnt/data:/mnt/data
+    - /tmp/.X11-unix:/tmp/.X11-unix
+    - /etc/localtime:/etc/localtime:ro
